@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 749562577840008429}
   - component: {fileID: 749562577840008431}
   - component: {fileID: 749562577840008425}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RedBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 749562577840008424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: -0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GBall: {fileID: 749562577840008424}
+  dead: 0
 --- !u!54 &749562577840008429
 Rigidbody:
   m_ObjectHideFlags: 0

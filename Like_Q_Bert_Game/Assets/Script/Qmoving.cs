@@ -6,6 +6,9 @@ public class Qmoving : MonoBehaviour
 {
     private bool m_bJump;
     public int m_iJump;
+    public static Transform qbertT;
+    public bool qdead = false;
+    public AudioSource jump;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +18,8 @@ public class Qmoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_iJump > 3)
+        qbertT = gameObject.transform;
+        if (m_iJump > 1)
         {
             // Down Left
             if (Input.GetKeyDown(KeyCode.Keypad1))
@@ -64,6 +68,7 @@ public class Qmoving : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        jump.Play();
         float x = transform.position.x;
         float z = transform.position.z;
 

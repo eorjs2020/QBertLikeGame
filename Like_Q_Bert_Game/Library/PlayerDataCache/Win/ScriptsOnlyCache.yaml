@@ -1,8 +1,14 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BallSpawn
     - BoxColor
+    - CoilyBallLogic
+    - CoilySnakeMoving
+    - CoilySpawn
     - GBallMoving
+    - GameLogic
+    - MainMenu
     - Qmoving
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -20,7 +26,6 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Level1.unity:
@@ -42,46 +47,56 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 11824}
     - Class: 114
-      Script: {instanceID: 12000}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12480}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12512}
+      Script: {instanceID: 12864}
     - Class: 114
-      Script: {instanceID: 12966}
+      Script: {instanceID: 12880}
     - Class: 114
-      Script: {instanceID: 13050}
+      Script: {instanceID: 13090}
     - Class: 114
-      Script: {instanceID: 13186}
+      Script: {instanceID: 13326}
     - Class: 114
-      Script: {instanceID: 13202}
+      Script: {instanceID: 13344}
     - Class: 114
-      Script: {instanceID: 13278}
+      Script: {instanceID: 13524}
     - Class: 114
-      Script: {instanceID: 13294}
+      Script: {instanceID: 13536}
     - Class: 114
-      Script: {instanceID: 13478}
+      Script: {instanceID: 13758}
     - Class: 114
-      Script: {instanceID: 13650}
+      Script: {instanceID: 13896}
     - Class: 114
-      Script: {instanceID: 13862}
+      Script: {instanceID: 13934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -93,6 +108,73 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11824}
+    - Class: 114
+      Script: {instanceID: 12008}
+    - Class: 114
+      Script: {instanceID: 12502}
+    - Class: 114
+      Script: {instanceID: 12534}
+    - Class: 114
+      Script: {instanceID: 13230}
+    - Class: 114
+      Script: {instanceID: 13246}
+    - Class: 114
+      Script: {instanceID: 13536}
+    - Class: 114
+      Script: {instanceID: 13718}
+    - Class: 114
+      Script: {instanceID: 13934}
+    - Class: 114
+      Script: {instanceID: 60348}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -319,6 +401,18 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: 835e3f249b0e4d4355df5a22d715c848
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BallSpawn
+  - hash:
+      serializedVersion: 2
+      Hash: 4a0bfce6ae09659718de6b971563e761
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoilyBallLogic
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -409,7 +503,7 @@ ScriptsOnlyBuild:
     className: GBallMoving
   - hash:
       serializedVersion: 2
-      Hash: b43e241c80300cc0180afd210bf1e56f
+      Hash: f8f254a042009c1484113eaae3d5af36
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Qmoving
@@ -425,6 +519,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: c26b216cd49b7fc33d1d96b1057f6348
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoilySpawn
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -449,6 +549,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: c1011f3006e2eb7b3b7a2a2d698d9fd5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoilySnakeMoving
   - hash:
       serializedVersion: 2
       Hash: a2612813f45d0ced02c3e4bc9dbea8b4
@@ -491,6 +597,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMesh
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameLogic
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -545,7 +657,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
   platform: 5
   scenePathNames:
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Level1.unity
-  playerPath: "D:/Coding/4semester/Production/\uC0C8 \uD3F4\uB354/Like_Q_Bert_Game.exe"
+  playerPath: "D:/Coding/4semester/Production/\uC0C8 \uD3F4\uB354 (2)/Like_Q_Bert_Game.exe"
