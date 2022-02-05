@@ -4,33 +4,41 @@ using UnityEngine;
 
 public class CoilyBallLogic : MonoBehaviour
 {
+    
     public GameObject coilySnake;
     private int Rnum;
     private int changeToSnake = 0;
     private bool canJump;
-    private int count;
+    private float count;
     public AudioSource jumpSound;
     // Start is called before the first frame update
     void Start()
     {
+        count = 0;
         //InvokeRepeating("RandomNum", 1, 2);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canJump && !GameLogic.isTimeStop)
-        {
-            count++;
+        if(GameLogic.isQDead)
+        {            
+            GameLogic.isSnake = false;
+            Destroy(gameObject);
         }
-        
-        if(changeToSnake == 6)
+
+        if(gameObject.transform.position.y < -5.6f)
         {
             Vector3 coilyBall = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f, gameObject.transform.position.z);
             Instantiate(coilySnake, coilyBall, Quaternion.identity);
             Destroy(gameObject);
         }
-        if (canJump && count > 800 && !GameLogic.isTimeStop)
+        if (canJump && !GameLogic.isTimeStop)
+        {
+            count += Time.deltaTime;
+        }  
+       
+        if (canJump && count > 1.5f && !GameLogic.isTimeStop)
         {
 
             RandomNum();
@@ -43,6 +51,16 @@ public class CoilyBallLogic : MonoBehaviour
         {
             jumpSound.Play();
             canJump = true;
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+
+            Destroy(collision.gameObject);
+            GameLogic.isQDead = true;
+            GameLogic.isSnake = false;
+            GameLogic.Qlife -= 1;
+            Destroy(gameObject);
+
         }
     }
 

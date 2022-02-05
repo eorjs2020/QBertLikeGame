@@ -28,11 +28,12 @@ public class BoxColor : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Qbert" && startTime > 4 && colornum == 1)
+        if (collision.gameObject.tag == "Player" && startTime > 4 && colornum == 1)
         {
             colornum -= 1;
             GetComponent<Renderer>().material = Green;
             GameLogic.remainingTiles -= 1;
+            GameLogic.gameScore += 25;
          
         }
     }

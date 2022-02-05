@@ -8,29 +8,35 @@ public class GBallMoving : MonoBehaviour
     public GameObject GBall;
     private Vector3 Target;
     private bool canJump = false;
-    private int count = 0;
+    private float count = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
-        //InvokeRepeating("RandomNum",1,2);
-        gameObject.tag = "Ignore";
-        
+        count = 0;
+        //InvokeRepeating("RandomNum",1,2);       
+
     }
 
     // Update is called once per frame
     void Update()
-    {        
-        if(transform.position.y < -9)
+    {
+        if (GameLogic.isQDead || !GameLogic.isSnake)
         {
-            if (GBall.name == "GreenBall(Clone)") 
-                Destroy(GBall);
+            count = 0;
+            Destroy(GBall);
+        }
+
+        if (transform.position.y < -9)
+        {            
+            Destroy(GBall);
         }
         if (canJump && !GameLogic.isTimeStop)
         {
-            count++;
+            count += Time.deltaTime;
         }
        
-        if (canJump && count > 800 && !GameLogic.isTimeStop)
+        if (canJump && count > 1.5f && !GameLogic.isTimeStop)
         {
 
             RandomNum();
@@ -54,19 +60,17 @@ public class GBallMoving : MonoBehaviour
         {            
             canJump = true;
         }
-        if (collision.gameObject.tag == "Ignore")
-        {
-            Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), GetComponent<Collider>()); ; ;
-        }
+        
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Qbert")
+        if (other.gameObject.tag == "Player")
         {
+            
             GameLogic.isTimeStop = true;
             GBall.SetActive(false);
-            Destroy(GBall);
-            Debug.Log("Collision");
+            GameLogic.gameScore += 100;
+            Destroy(GBall);            
         }
     }
    

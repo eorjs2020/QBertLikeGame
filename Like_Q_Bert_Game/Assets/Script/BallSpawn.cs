@@ -5,40 +5,36 @@ using UnityEngine;
 public class BallSpawn : MonoBehaviour
 {
     public GameObject Enemy;
+    public int startTime;
     private float spawnTime = 10.0f;
-    public float curTime;
+    private float curTime;
     private string enemyName;
     
     private void Start()
     {
-        curTime = 0;
-        enemyName = Enemy.name;
-        switch (enemyName)
-        {
-            case "GreenBall":
-                curTime += 7;
-                break;
-
-            case "RedBall":
-                curTime += 5;
-                break;
-
-        }
+        spawnTime = startTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(GameLogic.isQDead || !GameLogic.isSnake)
+        {
+            curTime = 0;
+        }
         if (curTime >= spawnTime && !GameLogic.isTimeStop)
         {
             SpawnEnemy();
         }
-        curTime += Time.deltaTime;
-
+        if (!GameLogic.isTimeStop)
+        {
+            curTime += Time.deltaTime;
+        }
     }
 
     public void SpawnEnemy()
     {
+        spawnTime = 13.0f;
         curTime = 0;
         Instantiate(Enemy, gameObject.transform);
     }
